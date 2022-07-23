@@ -1,0 +1,257 @@
+body {
+  background-color: black;
+  width: 1440px;
+  /* width: 80%; */
+}
+
+.Navigate {
+  float: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 0%;
+  display: flexbox;
+  background-color: #111315;
+  color: #FFFFFF;
+  align-items: center;
+  font-family: "Poppins";
+  padding: 1%;
+}
+
+#nav_heading {
+  height: 0%;
+  padding-left: 20%;
+  padding-top: 0%;
+  font-weight: 500;
+}
+
+.Image {
+  float: left-center;
+  position: absolute;
+  width: 211px;
+  height: 0;
+  left: 0%;
+  top: 0%;
+  padding: 3% 5%;
+}
+
+.Image2 {
+  float: right-center;
+  position: absolute;
+  width: 49px;
+  height: 39.16px;
+  right: 6%;
+  top: 6%;
+}
+
+.sidebar {
+  float: left;
+  display: block;
+  margin-top: 0.25%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0.25%;
+  background-color: #111315;
+  color: #FFFFFF;
+  align-items: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  padding-left: 3%;
+  padding-top: 1%;
+  padding-right: 3%;
+  padding-bottom: 0.5%;
+}
+
+#dash {
+
+  margin-top: 10px;
+}
+
+#Dashboard {
+  color: #FFFFFF;
+  padding: 3% 0%;
+  float: center;
+  border: transparent 1px solid;
+  border-radius: 4px;
+  background-color: #111315;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Poppins";
+  margin-left: 10px;
+}
+
+#addp {
+  margin-top: 5px;
+}
+
+#add_project {
+  color: #FFFFFF;
+  margin-left: 10px;
+  padding: 3% 0%;
+  float: center;
+  border: transparent 1px solid;
+  border-radius: 4px;
+  background-color: #111315;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
+#log-out {
+  color: #FFFFFF;
+  background-color: #111315;
+  border: transparent 1px solid;
+  margin-bottom: 1%;
+  margin-top: 20%;
+}
+
+#logout {
+  color: #FFFFFF;
+  padding: 3% 0%;
+  float: center;
+  border: transparent 1px solid;
+  border-radius: 4px;
+  background-color: #111315;
+  margin-top: 305px;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 1%;
+  margin-left: 10px;
+  font-family: "Poppins";
+}
+
+.form {
+  position: absolute;
+  margin-right: 0%;
+  margin-top: 0%;
+  left: 0%;
+  width: 85.25%;
+  height: 87.5%;
+  padding-right: 10%;
+  padding-left: 4.8%;
+  display: block;
+  font-family: "Poppins";
+}
+
+.content {
+  position: absolute;
+  width: 78%;
+  height: 80%;
+  left: 19%;
+  right: 4.8%;
+  font-family: "Poppins";
+  align-items: center;
+  background-color: #d4d4d4;
+  top: 16%;
+} 
+
+.heading {
+  float: left;
+  font-family: "Poppins";
+}
+
+.Form_heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: white;
+}
+
+label {
+  align-items: left;
+  color: #FFFFFF;
+  flex-direction: row;
+  text-align: left;
+  font-size: 15px;
+  width: 100%;
+  line-height: 1%;
+  margin-bottom: 0%;
+  font-family: "Poppins";
+}
+
+input {
+  background-color: black;
+  color: #111315;
+  display: block;
+  border-radius: 4px;
+  border: transparent;
+  padding-left: 0%;
+  width: 250px;
+  height: 38px;
+  font-size: 14px;
+  font-family: "Poppins";
+  margin-top: 20px;
+  text-align: left;
+}
+
+.addmail {
+  margin-top: 0%;
+}
+
+#submit {
+  position: absolute;
+  color: #FFFFFF;
+  border: transparent 1px solid;
+  border-radius: 8px;
+  background-color: #0075ff;
+  width: 200px;
+  height: 40px;
+  margin-top: 50%;
+  line-height: 24px;
+  left: 2%;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+
+#submit:hover{
+  background-color: #0065ff;
+}
+/* #button {
+  position: absolute;
+  left: 20%;
+  top: 0%;
+  background-color: #0075ff;
+  border: transparent solid;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Poppins";
+  color: #FFFFFF;
+  height: 25px;
+} */
+
+#mail_input {
+  position: absolute;
+  margin-left: 450px;
+  top: 92px;
+  width: 250px;
+  height: 0px;
+  left: 70px;
+  background-color: white;
+  border-radius: 0px;
+}
+
+/* .Image{
+  position: absolute;
+  width: 14.65%;
+  height: 4.31%;
+  left: 0%;
+  top: 0%;
+  background-color: transparent;
+  z-index: 1;
+} */
+#plus {
+  position: absolute;
+  top: 0;
+  margin-left: 772px;
+  margin-top: 137px;
+  background-color: black;
+  height: 32px;
+  width: 20px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+  cursor: pointer;
+}

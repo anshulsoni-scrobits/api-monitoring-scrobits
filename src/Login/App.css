@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap"); */
+
+/* FORM */
+
+form {
+  background-color: #1a1d1f;
+  width: 50%;
+  height: 45vh;
+  padding-bottom: 10vh;
+  padding-left: 30vh;
+}
+
+.center {
+  position: absolute;
+  text-align: right;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: #1a1d1f;
+  border-radius: 5px;
+  box-shadow: 2px 1px 2px #2691d9;
+}
+.center h1 {
+  text-align: center;
+  align-content: center;
+  padding-left: 125px;
+  /* border-bottom: 1px solid silver; */
+  margin: 30px;
+  font-weight: 400;
+}
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  font-weight: 300;
+  height: 60vh;
+}
+form .txt_field {
+  position: relative;
+  color: #e9f4fb;
+  margin: 55px 0;
+  padding-left: 40px;
+}
+.txt_field input {
+  color: #e9f4fb;
+  font-family: "Poppins";
+  width: 300px;
+  padding: 0 10px;
+  height: 40px;
+  font-size: 18px;
+
+  background-color: #111315;
+  border-radius: 4px;
+  outline: none;
+}
+.txt_field label {
+  position: absolute;
+  top: 55%;
+  left: 60px;
+  color: #adadad;
+  transform: translateY(-65%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+/* Animation effect */
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 0%;
+  height: 5px;
+  background: #2691d9;
+  transition: 0.5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: -5px;
+  color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+  width: 100%;
+}
+
+/* text box style */
+.pass {
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+.pass:hover {
+  text-decoration: underline;
+}
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover {
+  border-color: #2691d9;
+  transition: 0.5s;
+}
+
+/* Button styles */
+.btn {
+  width: 42.5vh;
+  height: 7vh;
+  background-color: #0075ff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: larger;
+  color: #e9f4fb;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-divv {
+  padding-left: 40px;
+}
+
+.btn:hover {
+  background-color: #2691d9;
+}
+/* ---------------------------------------------------------------------- */
+
+/* body and other elements */
+body {
+  background: #111315;
+  color: white;
+  height: 90vh;
+}
+
+/* Left side para / heading */
+.para {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1.4cm;
+  padding: 90px;
+  margin: 50px;
+  text-indent: 2em;
+}
+
+.para-under {
+  line-height: 20px;
+}
+
+/* Para present below the primary heading */
+.para-sec {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 0.8cm;
+  margin-top: -80px;
+  padding-left: 250px;
+  margin-bottom: -20px;
+}
+
+/* Logo Styling */
+.picture {
+  padding-left: 120px;
+  padding-bottom: 120px;
+}
+
+.logo {
+  /* margin: auto; */
+  padding-left: 100px;
+}
+
+.box {
+  padding: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------- */
