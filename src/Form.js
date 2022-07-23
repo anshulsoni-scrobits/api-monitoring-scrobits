@@ -1,32 +1,40 @@
+import swal from 'sweetalert';
 
-import Logo1 from './Images/Logo1.png';
-import Logo2 from './Images/Logo2.png';
-function Form() {
+function demo(){
+  
+  console.log('hello');
+ var name = document.getElementById('name').value;
+ var server_address =document.getElementById('S_add').value;
+ console.log(name);
+ console.log(server_address);
+const url= "https://api-monitor.scrobits.com/api/v1/projects";
+var data = {"name": name , "server_url":server_address,"user_id" : 8 };
+const params = {
+method:'POST',
+headers: {"Content-Type":"application/json"},
+body : JSON.stringify(data)
+}
+fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
+// alert("Data has been stored successfully.")
+swal("Good job!", "You clicked the button!", "success");
+return data;
+
+}
+function Form(){
+  
   return (
     
     <div className="content">
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-      /> */}
-      {/* <div className="Image">
-        <img src={Logo1}/>
-      </div>
-       */}
+      
       <form className="form">
         <h1 className="Form_heading">Add Project</h1>
         <br></br>
         <label for="name">Name</label>
-        <input id="name" placeholder="eg. scrobits prod" />
+        <input id="name"
+        placeholder="eg. scrobits prod" />
         <br></br>
         <label for="S_add">Server Adress</label>
-        <input id="S_add" placeholder="eg. scrobits.com" />
+        <input id="S_add"  placeholder="eg. scrobits.com" />
         <br></br>
         <label for="I_add">Interval</label>
         <input id="I_add" placeholder="time" />
@@ -38,7 +46,7 @@ function Form() {
         <div id="mail_input">
         <label for="Mail_id">Email Address to notify (upto 3)</label>
        
-        <div ><button id="submit" type="submit">
+        <div ><button id="submit"  type="button" onClick={demo} >
         Add Project
         </button></div>
 
