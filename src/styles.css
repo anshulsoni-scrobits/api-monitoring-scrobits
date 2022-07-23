@@ -132,6 +132,7 @@ body {
   font-family: "Poppins";
 }
 
+
 .content {
   position: absolute;
   width: 78%;
@@ -172,11 +173,11 @@ label {
 
 input {
   background-color: black;
-  color: #111315;
+  color:#FFFFFF;
   display: block;
   border-radius: 4px;
   border: transparent;
-  padding-left: 0%;
+  padding-left: 2%;
   width: 250px;
   height: 38px;
   font-size: 14px;
@@ -232,6 +233,10 @@ input {
   background-color: white;
   border-radius: 0px;
 }
+#Mail_id{
+  padding-left: 5%;
+  color: #FFFFFF;
+}
 
 /* .Image{
   position: absolute;
@@ -245,7 +250,7 @@ input {
 #plus {
   position: absolute;
   top: 0;
-  margin-left: 772px;
+  margin-left: 762.5px;
   margin-top: 137px;
   background-color: black;
   height: 32px;
