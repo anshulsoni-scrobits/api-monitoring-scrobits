@@ -10,18 +10,16 @@ var data = {"name": name , "server_url":server_address,"user_id" : 8 };
 const params = {
 method:'POST',
 headers: {"Content-Type":"application/json"},
-body : JSON.stringify(data)
+body : JSON.stringify(data),
 }
 fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
-swal("Thank you!", "Your data has been stored successfully.", "success");
-return data;
+ if(fetch(params)){
+   swal("Thank you!", "Your data has been stored successfully.", "success");}
+   else{
+    swal("Sorry!", "Your data was NOT stored successfully.", "error");
+  }
+ return data;
 }
-// function echoice(){
-//   <div id = "e_options">
-//   <input  placeholder="eg. name@xyz.com  " />
-//   <input  placeholder="eg. name@xyz.com  " />
-//   </div>
-// }
 function Form(){
   return (
     <div className="content">
@@ -41,14 +39,11 @@ function Form(){
         <label for="Exp_date">SSl Expiry date</label>
         <input id="Exp_date" placeholder="eg. 12-05-2022" />
         <br></br>
-        
         <div id="mail_input">
         <label for="Mail_id">Email Address to notify (upto 3)</label>
-       
         <div ><button id="submit"  type="button" onClick={demo} >
         Add Project
         </button></div>
-
         <input id="Mail_id" placeholder="eg. name@xyz.com  ">
           </input>
           </div>
