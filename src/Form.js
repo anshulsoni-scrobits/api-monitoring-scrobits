@@ -1,7 +1,5 @@
 import swal from 'sweetalert';
-
 function demo(){
-  
   console.log('hello');
  var name = document.getElementById('name').value;
  var server_address =document.getElementById('S_add').value;
@@ -15,17 +13,18 @@ headers: {"Content-Type":"application/json"},
 body : JSON.stringify(data)
 }
 fetch(url,params).then((response)=>{return response.json();}).then((data)=>{console.log(data)})
-// alert("Data has been stored successfully.")
-swal("Good job!", "You clicked the button!", "success");
+swal("Thank you!", "Your data has been stored successfully.", "success");
 return data;
-
 }
+// function echoice(){
+//   <div id = "e_options">
+//   <input  placeholder="eg. name@xyz.com  " />
+//   <input  placeholder="eg. name@xyz.com  " />
+//   </div>
+// }
 function Form(){
-  
   return (
-    
     <div className="content">
-      
       <form className="form">
         <h1 className="Form_heading">Add Project</h1>
         <br></br>
@@ -54,7 +53,7 @@ function Form(){
           </input>
           </div>
        </form>
-       <div id="plus">
+       <div id="plus" >
        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
        <path d="M9 17V9M9 9V1M9 9H17M9 9H1" stroke="#0075FF" stroke-width="2" stroke-linecap="round"/>
        </svg>
