@@ -27,24 +27,23 @@ function Form(){
         <h1 className="Form_heading">Add Project</h1>
         <br></br>
         <label for="name">Name</label>
-        <input id="name"
-        placeholder="eg. scrobits prod" />
+        <input id="name" type = "text" placeholder="eg. scrobits prod" />
         <br></br>
         <label for="S_add">Server Adress</label>
-        <input id="S_add"  placeholder="eg. scrobits.com" />
+        <input id="S_add" type = "text" placeholder="eg. scrobits.com" />
         <br></br>
         <label for="I_add">Interval</label>
-        <input id="I_add" placeholder="time" />
+        <input id="I_add" type= "number" placeholder="time" />
         <br></br>
         <label for="Exp_date">SSl Expiry date</label>
-        <input id="Exp_date" placeholder="eg. 12-05-2022" />
+        <input id="Exp_date" type = "date" placeholder="eg. 12-05-2022" />
         <br></br>
         <div id="mail_input">
         <label for="Mail_id">Email Address to notify (upto 3)</label>
         <div ><button id="submit"  type="button" onClick={demo} >
         Add Project
         </button></div>
-        <input id="Mail_id" placeholder="eg. name@xyz.com  ">
+        <input id="Mail_id" type = "email" placeholder="eg. name@xyz.com  ">
           </input>
           </div>
        </form>
