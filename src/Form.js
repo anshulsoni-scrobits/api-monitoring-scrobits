@@ -30,7 +30,9 @@ function Form(){
         <input id="name" type = "text" placeholder="eg. scrobits prod" />
         <br></br>
         <label for="S_add">Server Adress</label>
-        <input id="S_add" type = "text" placeholder="eg. scrobits.com" />
+        <input id="S_add" type = "text" 
+        pattern="((https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?)"
+        placeholder="eg. scrobits.com" />
         <br></br>
         <label for="I_add">Interval</label>
         <input id="I_add" type= "number" placeholder="time" />
