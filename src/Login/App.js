@@ -1,54 +1,47 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./img/scrobit.png";
+import "./Dashboard";
 import { Router, Route, useNavigate } from "react-router-dom";
-let vari;
+import axios from "axios";
 
-
+// globally declaring a variable
+// let vari;
 
 function App() {
   const navigate = useNavigate();
-  
-  function demo() {
-    // console.log("hello");
 
-    var mail1 = document.getElementById('mail').value;
-    var pass1 = document.getElementById('pass').value;
-    
-    const url = "https://api-monitor.scrobits.com/api/v1/login";
-    let data = `{"password": ${pass1} ,"email" : ${mail1} }`;
-    data = JSON.parse(data);
-    const params = {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "*/*" },
-      body: data,
-    };
-    fetch(url, params)
-    .then(async (res)=>{
-      if (res.status===200){
-        const response = await res.json()
-        // window.location.href = "/Dashboard";
-        console.log(response);
-        return data;
-      }
-      
-    })
-    .catch(err => console.log(err))
-    // return data;
-  }
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const navigateToDashboard = () => {
-    let data;
-
-    data = demo();
-    
-    navigate("/Dashboard");
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
   };
 
-  const navigateHome = () => {
-    navigate("/");
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
   };
+
+  const handleApi = () => {
+    console.log({ email, password });
+    axios
+      .post("https://api-monitor.scrobits.com/api/v1/login", {
+        email: email,
+        password: password,
+      })
+      .then((result) => {
+        console.log(result.data);
+        alert("successful")
+        // localStorage.setItem('token', result.data.token)
+        navigate('/Dashboard')
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("not successful")
+
+      });
+  };
+  // login page components
   return (
     // Left side Heading / para -
     <div className="container">
@@ -69,20 +62,30 @@ function App() {
 
       {/* Admin Login form  */}
       <div class="center">
-        <form method="post">
+        <form>
           {/* Login heading */}
           <h1>LOGIN</h1>
           {/* First text box (username) */}
 
           <div class="txt_field">
-            <input type="email" required id="mail"></input>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={handleEmail}
+            ></input>
             <span></span>
             <label>email</label>
           </div>
 
           {/* Second text box (Password) */}
           <div class="txt_field">
-            <input type="password" required id="pass"></input>
+            <input
+              type="password"
+              required
+              value={password}
+              onChange={handlePassword}
+            ></input>
             <span></span>
             <label>password</label>
           </div>
@@ -90,7 +93,7 @@ function App() {
 
           {/* Login Button */}
           <div className="btn-divv">
-            <button onClick={demo} className="btn">
+            <button onClick={handleApi} className="btn">
               Login
             </button>
           </div>
