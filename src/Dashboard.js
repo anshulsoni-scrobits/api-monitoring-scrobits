@@ -2,15 +2,23 @@ import Header from "./Components/Header";
 import Slidebar from "./Components/Slidebar";
 import ServerStatus from "./Components/ServerStatus";
 import ContentTable from "./Components/ContentTable";
-import { Route, Routes, Switch } from "react-router-dom";
-// import App from './Project';
-import Project from "./Project";
+import React,{component, useEffect,useState} from 'react';
 import "./index.css";
 
-function dash() {
+function Dash() {
+  const[project,setProject]=useState([])
+  const url="https://api-monitor.scrobits.com/api/v1/users/projects/8";
+  useEffect(()=>{
+         fetch(url,{method: 'get','Content-Type':'application/json'})
+        .then(async (data)=>{
+           setProject(await data.projects);
+         })
+         .catch((ERR)=>{
+          console.log(ERR);
+         })
+  },[])
   return (
     <>
-      {/* <Project />  */}
       <Slidebar />
       <Header />
       <ServerStatus />
@@ -18,6 +26,6 @@ function dash() {
     </>
   );
 }
-export default dash;
+export default Dash;
 
 
