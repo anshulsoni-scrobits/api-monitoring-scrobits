@@ -4,6 +4,7 @@ import logo from "./img/scrobit.png";
 import "./Dashboard";
 import { Router, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 // globally declaring a variable
 // let vari;
@@ -22,7 +23,8 @@ function App() {
     setPassword(e.target.value);
   };
 
-  const handleApi = () => {
+  const handleApi = (e) => {
+    e.preventDefault();
     console.log({ email, password });
     axios
       .post("https://api-monitor.scrobits.com/api/v1/login", {
@@ -31,14 +33,17 @@ function App() {
       })
       .then((result) => {
         console.log(result.data);
-        alert("successful")
+
+        navigate("/Dashboard");
+        swal("Successful !", "logged in", "success");
+
         // localStorage.setItem('token', result.data.token)
-        navigate('/Dashboard')
       })
       .catch((error) => {
         console.log(error);
-        alert("not successful")
+        swal("Unsuccessful !", "error occured", "error");
 
+        // navigate("/Dashboard");
       });
   };
   // login page components
