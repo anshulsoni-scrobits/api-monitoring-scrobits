@@ -1,4 +1,31 @@
 import swal from 'sweetalert';
+function validate_email(){
+  var text =document.getElementById('Mail_id').value;
+  var regx = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9\.-]+).([a-z]{2,20})$/;
+  if (regx.test(text)){
+    swal("Your email address is valid.", "Please proceed by clicking 'Add Project' after filling all fields.", "success");}
+    else{
+     swal("Sorry!", "Your email address is invalid, please check again.", "error");
+   } 
+}
+function validate_Saddress(){
+  var s_add =document.getElementById('S_add').value;
+  var regxserv = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  if (regxserv.test(s_add)){
+    swal("Your Server Address is valid.", "Please proceed by clicking 'Add Project' after filling all fields.", "success");}
+    else{
+     swal("Sorry!", "Your Server Address is invalid, please check again.", "error");
+   } 
+}
+function validate_name(){
+  var input_name =document.getElementById('name').value;
+  var regxName = /^([a-zA-Z\.-]+)$/;
+  if (regxName.test(input_name)){
+    swal("Your Name is valid.", "Please proceed by clicking 'Add Project' after filling all fields.", "success");}
+    else{
+     swal("Sorry!", "Please enter your correct name.", "error");
+   } 
+}
 function demo(){
   console.log('hello');
  var name = document.getElementById('name').value;
@@ -27,11 +54,11 @@ function Form(){
         <h1 className="Form_heading">Add Project</h1>
         <br></br>
         <label for="name">Name</label>
-        <input id="name" type = "text" placeholder="eg. scrobits prod" />
+        <input id="name" type = "text" onMouseOut={validate_name} placeholder="eg. scrobits prod" />
         <br></br>
         <label for="S_add">Server Adress</label>
-        <input id="S_add" type = "text" 
-        pattern="((https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?)"
+        <input id="S_add" type = "text" onMouseOut={validate_Saddress}
+        // pattern="((https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?)"
         placeholder="eg. scrobits.com" />
         <br></br>
         <label for="I_add">Interval</label>
@@ -45,7 +72,7 @@ function Form(){
         <div ><button id="submit"  type="button" onClick={demo} >
         Add Project
         </button></div>
-        <input id="Mail_id" type = "email" placeholder="eg. name@xyz.com  ">
+        <input id="Mail_id" type = "email" onMouseOut={validate_email} placeholder="eg. name@xyz.com  ">
           </input>
           </div>
        </form>
